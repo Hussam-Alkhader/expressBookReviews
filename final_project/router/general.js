@@ -134,7 +134,7 @@ public_users.get('/author/:author', async function (req, res) {
         // Check if any books were found
         if (booksByAuthor.length > 0) {
             // Send the list of found books as a JSON response
-            return res.status(200).json(booksByAuthor);
+            return res.status(200).json({ booksByAuthor: booksByAuthor });
         } else {
             // Send an error message if no books were found
             return res.status(404).json({ message: "No books found by this author" });
@@ -182,7 +182,7 @@ public_users.get('/title/:title', async function (req, res) {
         // Check if any books were found
         if (booksByTitle.length > 0) {
             // Send the list of found books as a JSON response
-            return res.status(200).json(booksByTitle);
+            return res.status(200).json({booksByTitle: booksByTitle});
         } else {
             // Send an error message if no books were found
             return res.status(404).json({ message: "No books found by this title" });
